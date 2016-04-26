@@ -1,5 +1,5 @@
 FROM jenkins
 
 USER root
-RUN apt-get update && apt-get install -y rpmbuild
+RUN apt-get update && apt-get install -y rpm-build
 USER jenkins 
