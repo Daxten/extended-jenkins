@@ -7,6 +7,7 @@ RUN dpkg --add-architecture i386 \
     && apt-get install -y libncurses5:i386 libstdc++6:i386 zlib1g:i386 rpm fakeroot build-essential nodejs expect
 RUN mkdir /android && chown jenkins /android
 
-USER jenkins 
+RUN rm /bin/sh \
+	&& ln -s bash /bin/sh
 
-ENV ANDROID_HOME /var/jenkins_home/android
+USER jenkins
